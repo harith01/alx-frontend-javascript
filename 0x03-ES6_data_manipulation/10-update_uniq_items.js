@@ -7,6 +7,4 @@ export default function updateUniqueItems(mp) {
       mp.set(key, 100);
     }
   }
-
-  return mp;
 }
