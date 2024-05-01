@@ -47,3 +47,20 @@ function createEmployee(salary: number | string): Director | Teacher {
     if (typeof salary === 'number' && salary < 500) return new Teacher()
     return new Director() 
 }
+
+// Write a function isDirector:
+function isDirector(employee: Director | Teacher): employee is Director {
+    return employee instanceof Director
+}
+
+// Write a function executeWork:
+function executeWork(employee: Director | Teacher): string {
+    return isDirector(employee) ? employee.workDirectorTasks(): employee.workTeacherTasks();
+}
+
+// String literal types
+type Subjects = "Math" | "History";
+
+function teachClass(todayClass: Subjects): string {
+    return todayClass === 'Math' ? 'Teaching Math' : 'Teaching History'
+}
